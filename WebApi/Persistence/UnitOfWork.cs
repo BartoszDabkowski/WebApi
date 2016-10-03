@@ -6,6 +6,7 @@ namespace WebApi.Persistence
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
+
         public IApplicationUserRepository Users { get; }
 
         public UnitOfWork(ApplicationDbContext context)

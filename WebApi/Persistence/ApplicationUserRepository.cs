@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using WebApi.Models;
 
 namespace WebApi.Persistence
 {
-    public class ApplicationUserRepository : Repository<ApplicationUser>, IApplicationUserRepository
+    public class ApplicationUserRepository : IApplicationUserRepository
     {
-        public ApplicationUserRepository(ApplicationDbContext context)
-            : base(context)
+        private readonly IApplicationDbContext _context;
+
+        public ApplicationUserRepository(IApplicationDbContext context)
         {
+            _context = context;
         }
 
         public IEnumerable<ApplicationUser> GetUsers()
         {
-            throw new NotImplementedException();
+            return _context.Users.ToList();
         }
     }
 }
