@@ -93,3 +93,14 @@ C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.csproj
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.AddProportiesToApplicationUser.resources
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\AutoMapper.dll
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\AutoMapper.xml
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.dll
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Extensions.Conventions.dll
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Common.dll
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Mvc.dll
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.WebApi.dll
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\WebActivatorEx.dll
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.xml
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Extensions.Conventions.xml
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Common.xml
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Mvc.xml
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.WebApi.xml
