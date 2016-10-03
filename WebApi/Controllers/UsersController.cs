@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using WebApi.Models;
+using WebApi.Dtos;
 using WebApi.Persistence;
 
 namespace WebApi.Controllers
 {
     public class UsersController : ApiController
     {
-        private readonly ApplicationDbContext _context;
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UsersController()
+        public UsersController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
-            _unitOfWork = new UnitOfWork(_context);
+            _unitOfWork = unitOfWork;
+        }
+
+        [HttpGet]
+        public IEnumerable<UserDto> GetUsers()
+        {
+            throw new NotImplementedException();
+            //return _unitOfWork.Users.GetUsers();
         }
     }
 }
