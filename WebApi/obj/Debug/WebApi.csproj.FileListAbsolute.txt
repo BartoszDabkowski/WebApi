@@ -104,3 +104,4 @@ C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Extensions.
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Common.xml
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Mvc.xml
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.WebApi.xml
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.SeedAdminUser.resources
