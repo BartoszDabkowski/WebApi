@@ -90,3 +90,4 @@ C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.dll
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.pdb
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.InitialMigration.resources
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.csproj.GenerateResource.Cache
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.AddProportiesToApplicationUser.resources
