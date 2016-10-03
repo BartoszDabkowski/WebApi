@@ -1,7 +1,9 @@
-﻿using System;
+﻿using AutoMapper;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using WebApi.Dtos;
+using WebApi.Models;
 using WebApi.Persistence;
 
 namespace WebApi.Controllers
@@ -18,8 +20,9 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<UserDto> GetUsers()
         {
-            throw new NotImplementedException();
-            //return _unitOfWork.Users.GetUsers();
+            var users = _unitOfWork.Users.GetUsers();
+
+            return users.Select(Mapper.Map<ApplicationUser, UserDto>);
         }
     }
 }
