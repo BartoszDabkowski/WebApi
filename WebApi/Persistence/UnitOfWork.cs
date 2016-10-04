@@ -1,5 +1,4 @@
-﻿using WebApi.Persistence;
-using WebApi.Models;
+﻿using WebApi.Models;
 
 namespace WebApi.Persistence
 {
@@ -8,11 +7,13 @@ namespace WebApi.Persistence
         private readonly ApplicationDbContext _context;
 
         public IApplicationUserRepository Users { get; }
+        public IPostRepository Posts { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
             Users = new ApplicationUserRepository(_context);
+            Posts = new PostRepostiory(_context);
         }
 
         public int Complete()

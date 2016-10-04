@@ -269,6 +269,7 @@
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Dtos\PostDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -285,17 +286,9 @@
     <Compile Include="Migrations\201610032216322_SeedAdminUser.Designer.cs">
       <DependentUpon>201610032216322_SeedAdminUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610041450236_AddPostAndCommentTables.cs" />
-    <Compile Include="Migrations\201610041450236_AddPostAndCommentTables.Designer.cs">
-      <DependentUpon>201610041450236_AddPostAndCommentTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610041543057_AddUserIdToPosts.cs" />
-    <Compile Include="Migrations\201610041543057_AddUserIdToPosts.Designer.cs">
-      <DependentUpon>201610041543057_AddUserIdToPosts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610041545552_DropUser_IdFromPostTable.cs" />
-    <Compile Include="Migrations\201610041545552_DropUser_IdFromPostTable.Designer.cs">
-      <DependentUpon>201610041545552_DropUser_IdFromPostTable.cs</DependentUpon>
+    <Compile Include="Migrations\201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.cs" />
+    <Compile Include="Migrations\201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.Designer.cs">
+      <DependentUpon>201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -406,14 +399,8 @@
     <EmbeddedResource Include="Migrations\201610032216322_SeedAdminUser.resx">
       <DependentUpon>201610032216322_SeedAdminUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610041450236_AddPostAndCommentTables.resx">
-      <DependentUpon>201610041450236_AddPostAndCommentTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610041543057_AddUserIdToPosts.resx">
-      <DependentUpon>201610041543057_AddUserIdToPosts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610041545552_DropUser_IdFromPostTable.resx">
-      <DependentUpon>201610041545552_DropUser_IdFromPostTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.resx">
+      <DependentUpon>201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

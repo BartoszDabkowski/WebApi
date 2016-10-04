@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using WebApi.Models;
 
@@ -28,10 +27,9 @@ namespace WebApi.Persistence
             return _context.Comments.Where(c => c.PostId == postId);
         }
 
-        public IEnumerable<Post> GetPostsByUser(int userId)
+        public IEnumerable<Post> GetPostsByUser(string userId)
         {
-            throw new NotImplementedException();
-            //return _context.Posts.Where(p => p. == postId);
+            return _context.Posts.Where(p => p.UserId == userId).ToList();
         }
     }
 }
