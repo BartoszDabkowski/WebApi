@@ -14,12 +14,26 @@ namespace WebApi.Persistence
         }
         public Post GetPost(int postId)
         {
-            return _context.Posts.SingleOrDefault(p => p.Id == postId);
+           return _context.Posts.SingleOrDefault(p => p.Id == postId);
         }
 
-        public IEnumerable<Post> GetPosts()
+        public IEnumerable<PostWithUserDetails> GetPosts()
         {
-            return _context.Posts.ToList();
+            var postWithUserDetails = _context.Posts.Join(_context.Users,
+                p => p.UserId,
+                u => u.Id,
+                (post, user) => new PostWithUserDetails
+                {
+                    Id = post.Id,
+                    UserId = post.UserId,
+                    User = post.User,
+                    Title = post.Title,
+                    Body = post.Body,
+                    DateTime = post.DateTime,
+                    Name = user.Name
+                });
+
+            return postWithUserDetails;
         }
 
         public IEnumerable<Comment> GetPostComments(int postId)

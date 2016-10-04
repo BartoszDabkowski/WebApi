@@ -6,7 +6,7 @@ namespace WebApi.Persistence
     public interface IPostRepository
     {
         Post GetPost(int postId);
-        IEnumerable<Post> GetPosts();
+        IEnumerable<PostWithUserDetails> GetPosts();
         IEnumerable<Comment> GetPostComments(int postId);
         IEnumerable<Post> GetPostsByUser(string userId);
     }

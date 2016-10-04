@@ -22,7 +22,7 @@ namespace WebApi.Controllers
         {
             var posts = _unitOfWork.Posts.GetPosts();
 
-            return posts.Select(Mapper.Map<Post, PostDto>);
+            return posts.Select(Mapper.Map<PostWithUserDetails, PostDto>);
         }
     }
 }
