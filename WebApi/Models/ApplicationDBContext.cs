@@ -8,6 +8,9 @@ namespace WebApi.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser> , IApplicationDbContext
     {
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

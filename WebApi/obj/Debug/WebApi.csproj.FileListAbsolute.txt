@@ -105,3 +105,6 @@ C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Common.
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Mvc.xml
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.WebApi.xml
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.SeedAdminUser.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.AddPostAndCommentTables.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.AddUserIdToPosts.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.DropUser_IdFromPostTable.resources

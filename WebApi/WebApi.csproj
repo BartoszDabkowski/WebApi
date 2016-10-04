@@ -266,6 +266,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Dtos\UserDto.cs" />
@@ -284,14 +285,30 @@
     <Compile Include="Migrations\201610032216322_SeedAdminUser.Designer.cs">
       <DependentUpon>201610032216322_SeedAdminUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610041450236_AddPostAndCommentTables.cs" />
+    <Compile Include="Migrations\201610041450236_AddPostAndCommentTables.Designer.cs">
+      <DependentUpon>201610041450236_AddPostAndCommentTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610041543057_AddUserIdToPosts.cs" />
+    <Compile Include="Migrations\201610041543057_AddUserIdToPosts.Designer.cs">
+      <DependentUpon>201610041543057_AddUserIdToPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610041545552_DropUser_IdFromPostTable.cs" />
+    <Compile Include="Migrations\201610041545552_DropUser_IdFromPostTable.Designer.cs">
+      <DependentUpon>201610041545552_DropUser_IdFromPostTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Persistence\IApplicationDbContext.cs" />
+    <Compile Include="Persistence\IPostRepository.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
+    <Compile Include="Persistence\PostRepostiory.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -388,6 +405,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610032216322_SeedAdminUser.resx">
       <DependentUpon>201610032216322_SeedAdminUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610041450236_AddPostAndCommentTables.resx">
+      <DependentUpon>201610041450236_AddPostAndCommentTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610041543057_AddUserIdToPosts.resx">
+      <DependentUpon>201610041543057_AddUserIdToPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610041545552_DropUser_IdFromPostTable.resx">
+      <DependentUpon>201610041545552_DropUser_IdFromPostTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
