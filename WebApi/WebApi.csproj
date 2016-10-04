@@ -269,6 +269,7 @@
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Dtos\CommentDto.cs" />
     <Compile Include="Dtos\PostDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -297,6 +298,7 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentWithUserDetails.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostWithUserDetails.cs" />
     <Compile Include="Persistence\IApplicationDbContext.cs" />

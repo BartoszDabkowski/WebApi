@@ -36,9 +36,21 @@ namespace WebApi.Persistence
             return postWithUserDetails;
         }
 
-        public IEnumerable<Comment> GetPostComments(int postId)
+        public IEnumerable<CommentWithUserDetails> GetPostComments(int postId)
         {
-            return _context.Comments.Where(c => c.PostId == postId);
+            var commentWithUserDetails = _context.Comments.Join(_context.Users,
+                c => c.UserId,
+                u => u.Id,
+                (comment, user) => new CommentWithUserDetails
+                {
+                    Id = comment.Id,
+                    PostId = comment.PostId,
+                    Body = comment.Body,
+                    DateTime = comment.DateTime,
+                    Name = user.Name
+                });
+
+            return commentWithUserDetails;
         }
 
         public IEnumerable<Post> GetPostsByUser(string userId)
