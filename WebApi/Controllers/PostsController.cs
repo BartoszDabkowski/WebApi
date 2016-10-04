@@ -33,5 +33,14 @@ namespace WebApi.Controllers
 
             return comments.Select(Mapper.Map<CommentWithUserDetails, CommentDto>);
         }
+
+        [HttpGet]
+        [Route("api/posts/{userId}")]
+        public IEnumerable<PostDto> GetPostsByUser(string userId)
+        {
+            var comments = _unitOfWork.Posts.GetPostsByUser(userId).ToList();
+
+            return comments.Select(Mapper.Map<PostWithUserDetails, PostDto>);
+        }
     }
 }

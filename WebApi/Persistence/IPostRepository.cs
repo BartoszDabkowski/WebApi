@@ -8,6 +8,6 @@ namespace WebApi.Persistence
         Post GetPost(int postId);
         IEnumerable<PostWithUserDetails> GetPosts();
         IEnumerable<CommentWithUserDetails> GetPostComments(int postId);
-        IEnumerable<Post> GetPostsByUser(string userId);
+        IEnumerable<PostWithUserDetails> GetPostsByUser(string userId);
     }
 }
