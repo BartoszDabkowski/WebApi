@@ -1,4 +1,6 @@
-﻿using Microsoft.Owin.Security.OAuth;
+﻿using System.Linq;
+using System.Net.Http.Formatting;
+using Microsoft.Owin.Security.OAuth;
 using System.Net.Http.Headers;
 using System.Web.Http;
 
@@ -20,6 +22,24 @@ namespace WebApi
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "Users",
+                routeTemplate: "api/users",
+                defaults: new { controller = "users"}
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "UsersPosts",
+                routeTemplate: "api/posts/{userId}",
+                defaults: new { controller = "posts", userId = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "Comments",
+                routeTemplate: "api/posts/{postId}/comments/{id}",
+                defaults: new { controller = "posts", id = RouteParameter.Optional }
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));

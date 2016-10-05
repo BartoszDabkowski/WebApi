@@ -36,7 +36,24 @@ namespace WebApi.Persistence
             return postWithUserDetails;
         }
 
-        public IEnumerable<CommentWithUserDetails> GetPostComments(int postId)
+        public IEnumerable<CommentWithUserDetails> GetAllPostComments(int postId)
+        {
+            var commentsWithUserDetails = _context.Comments.Join(_context.Users,
+                c => c.UserId,
+                u => u.Id,
+                (comment, user) => new CommentWithUserDetails
+                {
+                    Id = comment.Id,
+                    PostId = comment.PostId,
+                    Body = comment.Body,
+                    DateTime = comment.DateTime,
+                    Name = user.Name
+                }).ToList();
+
+            return commentsWithUserDetails;
+        }
+
+        public CommentWithUserDetails GetPostComment(int postId, int id)
         {
             var commentWithUserDetails = _context.Comments.Join(_context.Users,
                 c => c.UserId,
@@ -48,7 +65,8 @@ namespace WebApi.Persistence
                     Body = comment.Body,
                     DateTime = comment.DateTime,
                     Name = user.Name
-                });
+                })
+                .SingleOrDefault(c => c.Id == id);
 
             return commentWithUserDetails;
         }

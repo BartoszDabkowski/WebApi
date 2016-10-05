@@ -7,7 +7,8 @@ namespace WebApi.Persistence
     {
         Post GetPost(int postId);
         IEnumerable<PostWithUserDetails> GetPosts();
-        IEnumerable<CommentWithUserDetails> GetPostComments(int postId);
+        IEnumerable<CommentWithUserDetails> GetAllPostComments(int postId);
+        CommentWithUserDetails GetPostComment(int postId, int id);
         IEnumerable<PostWithUserDetails> GetPostsByUser(string userId);
     }
 }
