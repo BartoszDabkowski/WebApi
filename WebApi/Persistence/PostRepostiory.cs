@@ -7,11 +7,14 @@ namespace WebApi.Persistence
     public class PostRepostiory : IPostRepository
     {
         private readonly IApplicationDbContext _context;
+        private readonly ModelFactory _modelFactory;
 
         public PostRepostiory(IApplicationDbContext context)
         {
             _context = context;
+            _modelFactory = new ModelFactory();
         }
+
         public Post GetPost(int postId)
         {
            return _context.Posts.SingleOrDefault(p => p.Id == postId);
@@ -48,7 +51,7 @@ namespace WebApi.Persistence
                     Body = comment.Body,
                     DateTime = comment.DateTime,
                     Name = user.Name
-                }).ToList();
+                });
 
             return commentsWithUserDetails;
         }
@@ -59,13 +62,13 @@ namespace WebApi.Persistence
                 c => c.UserId,
                 u => u.Id,
                 (comment, user) => new CommentWithUserDetails
-                {
-                    Id = comment.Id,
-                    PostId = comment.PostId,
-                    Body = comment.Body,
-                    DateTime = comment.DateTime,
-                    Name = user.Name
-                })
+                    {
+                        Id = comment.Id,
+                        PostId = comment.PostId,
+                        Body = comment.Body,
+                        DateTime = comment.DateTime,
+                        Name = user.Name
+                    })
                 .SingleOrDefault(c => c.Id == id);
 
             return commentWithUserDetails;

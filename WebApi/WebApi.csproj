@@ -299,6 +299,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\CommentWithUserDetails.cs" />
+    <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostWithUserDetails.cs" />
     <Compile Include="Persistence\IApplicationDbContext.cs" />
