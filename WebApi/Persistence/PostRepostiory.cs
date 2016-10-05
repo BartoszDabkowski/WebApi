@@ -7,10 +7,12 @@ namespace WebApi.Persistence
     public class PostRepostiory : IPostRepository
     {
         private readonly IApplicationDbContext _context;
+        private readonly ModelFactory _modelFactory;
 
         public PostRepostiory(IApplicationDbContext context)
         {
             _context = context;
+            _modelFactory = new ModelFactory();
         }
 
         public Post GetPost(int postId)
@@ -23,16 +25,7 @@ namespace WebApi.Persistence
             var postWithUserDetails = _context.Posts.Join(_context.Users,
                 p => p.UserId,
                 u => u.Id,
-                (post, user) => new PostWithUserDetails
-                {
-                    Id = post.Id,
-                    UserId = post.UserId,
-                    User = post.User,
-                    Title = post.Title,
-                    Body = post.Body,
-                    DateTime = post.DateTime,
-                    Name = user.Name
-                });
+                _modelFactory.CreatePostWithUserDetails());
 
             return postWithUserDetails;
         }
@@ -42,14 +35,7 @@ namespace WebApi.Persistence
             var commentsWithUserDetails = _context.Comments.Join(_context.Users,
                 c => c.UserId,
                 u => u.Id,
-                (comment, user) => new CommentWithUserDetails
-                {
-                    Id = comment.Id,
-                    PostId = comment.PostId,
-                    Body = comment.Body,
-                    DateTime = comment.DateTime,
-                    Name = user.Name
-                });
+                _modelFactory.CreateCommentWithUserDetails());
 
             return commentsWithUserDetails;
         }
@@ -57,16 +43,9 @@ namespace WebApi.Persistence
         public CommentWithUserDetails GetPostComment(int postId, int id)
         {
             var commentWithUserDetails = _context.Comments.Join(_context.Users,
-                c => c.UserId,
-                u => u.Id,
-                (comment, user) => new CommentWithUserDetails
-                    {
-                        Id = comment.Id,
-                        PostId = comment.PostId,
-                        Body = comment.Body,
-                        DateTime = comment.DateTime,
-                        Name = user.Name
-                    })
+                    c => c.UserId,
+                    u => u.Id,
+                    _modelFactory.CreateCommentWithUserDetails())
                 .SingleOrDefault(c => c.Id == id);
 
             return commentWithUserDetails;
@@ -79,16 +58,7 @@ namespace WebApi.Persistence
                 .Join(_context.Users,
                 p => p.UserId,
                 u => u.Id,
-                (post, user) => new PostWithUserDetails
-                {
-                    Id = post.Id,
-                    UserId = post.UserId,
-                    User = post.User,
-                    Title = post.Title,
-                    Body = post.Body,
-                    DateTime = post.DateTime,
-                    Name = user.Name
-                });
+                _modelFactory.CreatePostWithUserDetails());
 
             return postWithUserDetails;
         }

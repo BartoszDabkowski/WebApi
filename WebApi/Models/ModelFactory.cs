@@ -1,10 +1,13 @@
-﻿namespace WebApi.Models
+﻿using System;
+using System.Linq.Expressions;
+
+namespace WebApi.Models
 {
     public class ModelFactory
     {
-        public CommentWithUserDetails Create(Comment comment, ApplicationUser user)
+        public Expression<Func<Comment, ApplicationUser, CommentWithUserDetails>> CreateCommentWithUserDetails()
         {
-            return new CommentWithUserDetails
+            return (comment, user) => new CommentWithUserDetails
             {
                 Id = comment.Id,
                 PostId = comment.PostId,
@@ -14,9 +17,9 @@
             };
         }
 
-        public PostWithUserDetails Create(Post post, ApplicationUser user)
+        public Expression<Func<Post, ApplicationUser, PostWithUserDetails>> CreatePostWithUserDetails()
         {
-            return new PostWithUserDetails
+            return (post, user) => new PostWithUserDetails
             {
                 Id = post.Id,
                 UserId = post.UserId,

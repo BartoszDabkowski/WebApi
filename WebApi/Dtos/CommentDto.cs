@@ -9,5 +9,6 @@ namespace WebApi.Dtos
         public string Name { get; set; }
         public string Body { get; set; }
         public DateTime DateTime { get; set; }
+        public string Url { get; set; }
     }
 }
