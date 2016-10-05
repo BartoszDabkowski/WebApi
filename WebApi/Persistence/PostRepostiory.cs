@@ -7,12 +7,10 @@ namespace WebApi.Persistence
     public class PostRepostiory : IPostRepository
     {
         private readonly IApplicationDbContext _context;
-        private readonly ModelFactory _modelFactory;
 
         public PostRepostiory(IApplicationDbContext context)
         {
             _context = context;
-            _modelFactory = new ModelFactory();
         }
 
         public Post GetPost(int postId)
