@@ -47,6 +47,11 @@ namespace WebApi
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+#if !DEBUG
+            // Force HTTPS on entire API
+            config.Filters.Add(new RequireHttpsAttribute());
+#endif
         }
     }
 }
