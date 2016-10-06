@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using WebApi.Dtos;
 using WebApi.Models;
+using WebApi.Models.Entities;
 using WebApi.Persistence;
 
 //WeNeverSleep@1850

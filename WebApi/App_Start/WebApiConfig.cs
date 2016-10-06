@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Net.Http.Formatting;
-using Microsoft.Owin.Security.OAuth;
+﻿using Microsoft.Owin.Security.OAuth;
 using System.Net.Http.Headers;
 using System.Web.Http;
 
@@ -31,7 +29,7 @@ namespace WebApi
             );
 
             config.Routes.MapHttpRoute(
-                name: "UsersPosts",
+                name: "Posts",
                 routeTemplate: "api/posts/{userId}",
                 defaults: new { controller = "posts", userId = RouteParameter.Optional }
             );

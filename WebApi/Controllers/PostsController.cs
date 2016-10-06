@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using WebApi.Dtos;
-using WebApi.Models;
+using WebApi.Models.JoinModels;
 using WebApi.Persistence;
 
 namespace WebApi.Controllers
 {
-    public class PostsController : ApiController
+    public class PostsController : BaseApiController
     {
-        private readonly IUnitOfWork _unitOfWork;
-
-        public PostsController(IUnitOfWork unitOfWork)
+        public PostsController(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
         public IEnumerable<PostDto> GetPosts()
         {
-            var posts = _unitOfWork.Posts.GetPosts();
+            var posts = UnitOfWork.Posts.GetPosts();
 
             return posts.Select(Mapper.Map<PostWithUserDetails, PostDto>);
         }
@@ -28,25 +25,25 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<CommentDto> GetAllPostComments(int postId)
         {
-            var comments = _unitOfWork.Posts.GetAllPostComments(postId);
-
-            return comments.Select(Mapper.Map<CommentWithUserDetails, CommentDto>);
+            var comments = UnitOfWork.Posts.GetAllPostComments(postId)
+                                        .Select(c => DtoFactory.Create(c));
+            return comments;
         }
 
         [HttpGet]
         public IHttpActionResult GetPostComment(int postId, int id)
         {
-            var comment = _unitOfWork.Posts.GetPostComment(postId, id);
+            var comment = UnitOfWork.Posts.GetPostComment(postId, id);
 
-            return Ok(Mapper.Map<CommentWithUserDetails, CommentDto>(comment));
+            return Ok(DtoFactory.Create(comment));
         }
 
         [HttpGet]
         public IEnumerable<PostDto> GetPostsByUser(string userId)
         {
-            var comments = _unitOfWork.Posts.GetPostsByUser(userId);
-
-            return comments.Select(Mapper.Map<PostWithUserDetails, PostDto>);
+            var comments = UnitOfWork.Posts.GetPostsByUser(userId)
+                                        .Select(p => DtoFactory.Create(p));
+            return comments;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using WebApi.Models;
+using WebApi.Models.Entities;
 
 namespace WebApi.Persistence
 {

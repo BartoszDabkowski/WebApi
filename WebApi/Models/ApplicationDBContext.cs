@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using WebApi.Models.Entities;
 using WebApi.Persistence;
 
 namespace WebApi.Models
