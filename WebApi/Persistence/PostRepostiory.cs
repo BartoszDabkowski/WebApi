@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WebApi.Models.Entities;
 using WebApi.Models.JoinModels;
 
 namespace WebApi.Persistence
@@ -16,40 +15,38 @@ namespace WebApi.Persistence
             _joinModelFactory = new JoinModelFactory();
         }
 
-        public Post GetPost(int postId)
+        public PostWithUserDetails GetPost(int id)
         {
-           return _context.Posts.SingleOrDefault(p => p.Id == postId);
+            var postWithUserDetails = _context.Posts.Join(_context.Users,
+                        p => p.UserId,
+                        u => u.Id,
+                        _joinModelFactory.CreatePostWithUserDetails())
+                    .SingleOrDefault(p => p.Id == id);
+
+            return postWithUserDetails;
         }
 
         public IEnumerable<PostWithUserDetails> GetPosts()
         {
             var postWithUserDetails = _context.Posts.Join(_context.Users,
-                p => p.UserId,
-                u => u.Id,
-                _joinModelFactory.CreatePostWithUserDetails());
+                    p => p.UserId,
+                    u => u.Id,
+                    _joinModelFactory.CreatePostWithUserDetails());
 
             return postWithUserDetails;
         }
 
-        public IEnumerable<CommentWithUserDetails> GetAllPostComments(int postId)
+        public PostWithUserDetails GetPostByUser(string userId, int postId)
         {
-            var commentsWithUserDetails = _context.Comments.Join(_context.Users,
-                c => c.UserId,
-                u => u.Id,
-                _joinModelFactory.CreateCommentWithUserDetails());
-
-            return commentsWithUserDetails;
-        }
-
-        public CommentWithUserDetails GetPostComment(int postId, int id)
-        {
-            var commentWithUserDetails = _context.Comments.Join(_context.Users,
-                    c => c.UserId,
+            var postWithUserDetails = _context.Posts
+                .Where(u => u.UserId == userId)
+                .Join(_context.Users,
+                    p => p.UserId,
                     u => u.Id,
-                    _joinModelFactory.CreateCommentWithUserDetails())
-                .SingleOrDefault(c => c.Id == id);
+                    _joinModelFactory.CreatePostWithUserDetails())
+                .SingleOrDefault(p => p.Id == postId);
 
-            return commentWithUserDetails;
+            return postWithUserDetails;
         }
 
         public IEnumerable<PostWithUserDetails> GetPostsByUser(string userId)
@@ -57,9 +54,9 @@ namespace WebApi.Persistence
             var postWithUserDetails = _context.Posts
                 .Where(u => u.UserId == userId)
                 .Join(_context.Users,
-                p => p.UserId,
-                u => u.Id,
-                _joinModelFactory.CreatePostWithUserDetails());
+                    p => p.UserId,
+                    u => u.Id,
+                    _joinModelFactory.CreatePostWithUserDetails());
 
             return postWithUserDetails;
         }

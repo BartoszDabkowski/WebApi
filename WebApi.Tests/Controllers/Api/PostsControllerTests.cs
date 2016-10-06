@@ -26,7 +26,7 @@
     //        [TestMethod]
     //        public void GetPosts_NoPostWithGivenIdExists_ShouldReturnNotFound()
     //        {
-    //            var result = _controller.GetPostComment(1, 1);
+    //            var result = _controller.GetComment(1, 1);
     //
     //            result.Should().BeOfType<NotFoundResult>();
     //        }

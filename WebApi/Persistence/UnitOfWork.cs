@@ -8,12 +8,14 @@ namespace WebApi.Persistence
 
         public IApplicationUserRepository Users { get; }
         public IPostRepository Posts { get; }
+        public ICommentRepository Comments { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
             Users = new ApplicationUserRepository(_context);
             Posts = new PostRepostiory(_context);
+            Comments = new CommentRepository(_context);
         }
 
         public int Complete()

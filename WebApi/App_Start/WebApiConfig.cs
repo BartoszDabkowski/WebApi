@@ -24,20 +24,32 @@ namespace WebApi
 
             config.Routes.MapHttpRoute(
                 name: "Users",
-                routeTemplate: "api/users",
-                defaults: new { controller = "users"}
+                routeTemplate: "api/users/{id}",
+                defaults: new { controller = "users", id = RouteParameter.Optional }
             );
 
             config.Routes.MapHttpRoute(
                 name: "Posts",
-                routeTemplate: "api/posts/{userId}",
-                defaults: new { controller = "posts", userId = RouteParameter.Optional }
+                routeTemplate: "api/posts/{id}",
+                defaults: new { controller = "posts", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "UsersPosts",
+                routeTemplate: "api/users/{userId}/posts/{id}",
+                defaults: new { controller = "posts", id = RouteParameter.Optional }
             );
 
             config.Routes.MapHttpRoute(
                 name: "Comments",
                 routeTemplate: "api/posts/{postId}/comments/{id}",
-                defaults: new { controller = "posts", id = RouteParameter.Optional }
+                defaults: new { controller = "comments", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "UsersComments",
+                routeTemplate: "api/users/{userId}/posts/{postId}/comments/{id}",
+                defaults: new { controller = "comments", id = RouteParameter.Optional }
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));

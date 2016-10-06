@@ -6,6 +6,7 @@ namespace WebApi.Persistence
     {
         IApplicationUserRepository Users { get; }
         IPostRepository Posts { get; }
+        ICommentRepository Comments { get; }
 
         int Complete();
     }
