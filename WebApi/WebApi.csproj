@@ -276,6 +276,7 @@
     <Compile Include="Dtos\PostDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Filter\RequireHttpsAttribute.cs" />
+    <Compile Include="Filter\WebApiAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
