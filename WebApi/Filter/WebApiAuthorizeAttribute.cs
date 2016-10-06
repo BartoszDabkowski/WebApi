@@ -26,6 +26,14 @@ namespace WebApi.Filter
                     var username = split[0];
                     var password = split[1];
 
+                    //TODO: install WebMatrix with Nuget 
+                    //TODO: After Nuget 3.4.4 update, packages config bug???
+
+//                    if (!WebSecurity.Initialized)
+//                    {
+//                        WebSecurity.InitializeDatabaseConnection();
+//                    }
+
 //                    if (WebSecurity.Login(username, password))
 //                    {
 //                        var principal = new GenericPrincipal(new GenericIdentity(username), null);
