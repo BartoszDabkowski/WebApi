@@ -13,6 +13,15 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
+        public IHttpActionResult GetPost(int postId)
+        {
+            var post = UnitOfWork.Posts.GetPosts()
+                                    .SingleOrDefault(p => p.Id == postId);
+
+            return Ok(DtoFactory.Create(post));
+        }
+
+        [HttpGet]
         public IEnumerable<PostDto> GetPosts()
         {
             var posts = UnitOfWork.Posts.GetPosts()

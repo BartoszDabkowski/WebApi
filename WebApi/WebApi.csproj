@@ -309,7 +309,9 @@
     <Compile Include="Models\JoinModels\CommentWithUserDetails.cs" />
     <Compile Include="Models\JoinModels\JoinModelFactory.cs" />
     <Compile Include="Models\JoinModels\PostWithUserDetails.cs" />
+    <Compile Include="Persistence\CommentRepository.cs" />
     <Compile Include="Persistence\IApplicationDbContext.cs" />
+    <Compile Include="Persistence\ICommentRepository.cs" />
     <Compile Include="Persistence\IPostRepository.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Persistence\PostRepostiory.cs" />

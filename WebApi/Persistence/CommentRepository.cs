@@ -15,15 +15,15 @@ namespace WebApi.Persistence
             _joinModelFactory = new JoinModelFactory();
         }
 
-        public CommentWithUserDetails GetPostComment(int postId, int id)
+        public CommentWithUserDetails GetPostComment(int postId, int commentId)
         {
             var commentWithUserDetails = _context.Comments
-                .Where(p => p.Id == postId)
+                .Where(p => p.PostId == postId)
                 .Join(_context.Users,
                     c => c.UserId,
                     u => u.Id,
                     _joinModelFactory.CreateCommentWithUserDetails())
-                .SingleOrDefault(c => c.Id == id);
+                .SingleOrDefault(c => c.Id == commentId);
 
             return commentWithUserDetails;
         }
@@ -31,7 +31,7 @@ namespace WebApi.Persistence
         public IEnumerable<CommentWithUserDetails> GetAllPostComments(int postId)
         {
             var commentsWithUserDetails = _context.Comments
-                .Where(p => p.Id == postId)
+                .Where(p => p.PostId == postId)
                 .Join(_context.Users,
                     c => c.UserId,
                     u => u.Id,

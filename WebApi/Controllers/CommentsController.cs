@@ -21,9 +21,9 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetComment(int postId, int id)
+        public IHttpActionResult GetComment(int postId, int commentId)
         {
-            var comment = UnitOfWork.Comments.GetPostComment(postId, id);
+            var comment = UnitOfWork.Comments.GetPostComment(postId, commentId);
 
             return Ok(DtoFactory.Create(comment));
         }
@@ -37,10 +37,10 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetCommentByUser(string userId, int postId, int id)
+        public IHttpActionResult GetCommentByUser(string userId, int postId, int commentId)
         {
             var comment = UnitOfWork.Comments.GetAllUserPostComments(userId, postId)
-                .SingleOrDefault(c => c.Id == id);
+                .SingleOrDefault(c => c.Id == commentId);
 
             return Ok(DtoFactory.Create(comment));
         }

@@ -1,4 +1,4 @@
-var Microsoft;
+﻿var Microsoft;
 (function (Microsoft) {
     var ApplicationInsights;
     (function (ApplicationInsights) {
@@ -743,7 +743,7 @@ var Microsoft;
             AjaxMonitor.prototype.sendHandler = function (xhr, content) {
                 xhr.ajaxData.requestSentTime = ApplicationInsights.dateTime.Now();
                 if (!this.appInsights.config.disableCorrelationHeaders && (ApplicationInsights.UrlHelper.parseUrl(xhr.ajaxData.getAbsoluteUrl()).host == this.currentWindowHost)) {
-                    xhr.setRequestHeader("x-ms-request-id", xhr.ajaxData.id);
+                    xhr.setRequestHeader("x-ms-request-commentId", xhr.ajaxData.id);
                 }
                 xhr.ajaxData.xhrMonitoringState.sendDone = true;
             };
@@ -1107,7 +1107,7 @@ var AI;
             this.applicationBuild = "ai.application.build";
             this.applicationTypeId = "ai.application.typeId";
             this.applicationId = "ai.application.applicationId";
-            this.deviceId = "ai.device.id";
+            this.deviceId = "ai.device.commentId";
             this.deviceIp = "ai.device.ip";
             this.deviceLanguage = "ai.device.language";
             this.deviceLocale = "ai.device.locale";
@@ -1124,20 +1124,20 @@ var AI;
             this.deviceMachineName = "ai.device.machineName";
             this.deviceVMName = "ai.device.vmName";
             this.locationIp = "ai.location.ip";
-            this.operationId = "ai.operation.id";
+            this.operationId = "ai.operation.commentId";
             this.operationName = "ai.operation.name";
             this.operationParentId = "ai.operation.parentId";
             this.operationRootId = "ai.operation.rootId";
             this.operationSyntheticSource = "ai.operation.syntheticSource";
             this.operationIsSynthetic = "ai.operation.isSynthetic";
             this.operationCorrelationVector = "ai.operation.correlationVector";
-            this.sessionId = "ai.session.id";
+            this.sessionId = "ai.session.commentId";
             this.sessionIsFirst = "ai.session.isFirst";
             this.sessionIsNew = "ai.session.isNew";
             this.userAccountAcquisitionDate = "ai.user.accountAcquisitionDate";
             this.userAccountId = "ai.user.accountId";
             this.userAgent = "ai.user.userAgent";
-            this.userId = "ai.user.id";
+            this.userId = "ai.user.commentId";
             this.userStoreRegion = "ai.user.storeRegion";
             this.userAuthUserId = "ai.user.authUserId";
             this.userAnonymousUserAcquisitionDate = "ai.user.anonUserAcquisitionDate";
@@ -1495,7 +1495,7 @@ var Microsoft;
                     var isInvalidInput = !this.validateUserInput(authenticatedUserId) || (accountId && !this.validateUserInput(accountId));
                     if (isInvalidInput) {
                         ApplicationInsights._InternalLogging.throwInternalUserActionable(ApplicationInsights.LoggingSeverity.WARNING, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.USRACT_SetAuthContextFailedAccountName, "Setting auth user context failed. " +
-                            "User auth/account id should be of type string, and not contain commas, semi-colons, equal signs, spaces, or vertical-bars."));
+                            "User auth/account commentId should be of type string, and not contain commas, semi-colons, equal signs, spaces, or vertical-bars."));
                         return;
                     }
                     this.authenticatedId = authenticatedUserId;
