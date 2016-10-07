@@ -20,9 +20,22 @@ namespace WebApi.Dtos
                 Id = comment.Id,
                 PostId = comment.PostId,
                 Body = comment.Body,
-                DateTime = comment.DateTime,
                 Name = comment.Name,
                 Url = _uriHelper.Link("Comments", new { postId = comment.PostId, commentId = comment.Id })
+
+            };
+        }
+
+        public CommentV2Dto CreateV2(CommentWithUserDetails comment)
+        {
+            return new CommentV2Dto()
+            {
+                Id = comment.Id,
+                PostId = comment.PostId,
+                Body = comment.Body,
+                DateTime = comment.DateTime,
+                Name = comment.Name,
+                Url = _uriHelper.Link("Comments", new { postId = comment.PostId, commentId = comment.Id, v = 2 })
 
             };
         }

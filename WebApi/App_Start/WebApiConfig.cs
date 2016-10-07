@@ -1,6 +1,8 @@
 ﻿using Microsoft.Owin.Security.OAuth;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
+using WebApi.Services;
 
 namespace WebApi
 {
@@ -47,6 +49,8 @@ namespace WebApi
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            config.Services.Replace(typeof(IHttpControllerSelector), new WebApiControllerSelector(config));
 
 #if !DEBUG
             // Force HTTPS on entire API
