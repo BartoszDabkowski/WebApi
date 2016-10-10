@@ -298,9 +298,9 @@
     <Compile Include="Migrations\201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.Designer.cs">
       <DependentUpon>201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610061614139_SeedUsers.cs" />
-    <Compile Include="Migrations\201610061614139_SeedUsers.Designer.cs">
-      <DependentUpon>201610061614139_SeedUsers.cs</DependentUpon>
+    <Compile Include="Migrations\201610061614139_SeedUsersPostsAndComments.cs" />
+    <Compile Include="Migrations\201610061614139_SeedUsersPostsAndComments.Designer.cs">
+      <DependentUpon>201610061614139_SeedUsersPostsAndComments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -420,8 +420,8 @@
     <EmbeddedResource Include="Migrations\201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.resx">
       <DependentUpon>201610041735102_RecoverFromMigrationMistakesAddManyDifferentTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610061614139_SeedUsers.resx">
-      <DependentUpon>201610061614139_SeedUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610061614139_SeedUsersPostsAndComments.resx">
+      <DependentUpon>201610061614139_SeedUsersPostsAndComments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
