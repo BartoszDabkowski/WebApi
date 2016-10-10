@@ -21,30 +21,11 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetComment(int postId, int commentId)
-        {
-            var comment = UnitOfWork.Comments.GetPostComment(postId, commentId);
-
-            return Ok(DtoFactory.CreateV2(comment));
-        }
-
-        [HttpGet]
         public IEnumerable<CommentV2Dto> GetCommentsByUser(string userId, int postId)
         {
             var comments = UnitOfWork.Comments.GetAllUserPostComments(userId, postId)
                                         .Select(c => DtoFactory.CreateV2(c));
             return comments;
         }
-
-        [HttpGet]
-        public IHttpActionResult GetCommentByUser(string userId, int postId, int commentId)
-        {
-            var comment = UnitOfWork.Comments.GetAllUserPostComments(userId, postId)
-                .SingleOrDefault(c => c.Id == commentId);
-
-            return Ok(DtoFactory.CreateV2(comment));
-        }
-
-        
     }
 }

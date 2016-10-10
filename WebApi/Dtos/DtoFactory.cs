@@ -21,7 +21,7 @@ namespace WebApi.Dtos
                 PostId = comment.PostId,
                 Body = comment.Body,
                 Name = comment.Name,
-                Url = _uriHelper.Link("Comments", new { postId = comment.PostId, commentId = comment.Id })
+                Url = _uriHelper.Link("Comments", new { postId = comment.PostId})
 
             };
         }
@@ -35,7 +35,7 @@ namespace WebApi.Dtos
                 Body = comment.Body,
                 DateTime = comment.DateTime,
                 Name = comment.Name,
-                Url = _uriHelper.Link("Comments", new { postId = comment.PostId, commentId = comment.Id, v = 2 })
+                Url = _uriHelper.Link("Comments", new { postId = comment.PostId, v = 2 })
 
             };
         }

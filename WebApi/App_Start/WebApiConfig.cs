@@ -38,14 +38,14 @@ namespace WebApi
 
             config.Routes.MapHttpRoute(
                 name: "Comments",
-                routeTemplate: "api/posts/{postId}/comments/{commentId}",
-                defaults: new { controller = "comments", commentId = RouteParameter.Optional }
+                routeTemplate: "api/posts/{postId}/comments",
+                defaults: new { controller = "comments"}
             );
 
             config.Routes.MapHttpRoute(
                 name: "UsersComments",
-                routeTemplate: "api/users/{userId}/posts/{postId}/comments/{commentId}",
-                defaults: new { controller = "comments", commentId = RouteParameter.Optional }
+                routeTemplate: "api/users/{userId}/posts/{postId}/comments",
+                defaults: new { controller = "comments"}
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));

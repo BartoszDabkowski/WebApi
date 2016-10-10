@@ -1,29 +1,43 @@
 ﻿<div class="jumbotron">
     <h1>ASP.NET</h1>
     <h3>Paths</h3>
-    <ul>
-        <li>.../api/users</li>
-        <li>.../api/posts/{userId}</li>
-        <li>.../api/posts/{commentId}/comments/{commentId}</li>
-    </ul>
+    
     
 </div>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an commentIdeal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+    <div class="col-md-6">
+        <h2>GET</h2>
+        <ul>
+            <li>
+                Get Users
+                .../api/users
+                <ul>
+                    <li>.../api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc</li>
+                </ul>
+            </li>
+            <li>
+                Get Users Post(s)
+                .../api/users/{userId}/posts/{postId}
+                <ul>
+                    <li>/api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc/posts</li>
+                    <li>/api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc/posts/2</li>
+                </ul>
+            </li>
+            <li>
+                Get Posts Comments
+                .../api/posts/{commentId}/comments
+                <ul>
+                    <li>.../api/posts/2/comments</li>
+                </ul>
+            </li>
+            <li>
+                Get Users Comments
+                .../api/users/{userId}/posts/{postId}/comments
+                <ul>
+                    <li>.../api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc/posts/1/comments</li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
+
 </div>
