@@ -32,7 +32,7 @@
     //
     //            _mockPosts.SetSource(new[] {post});
     //
-    //            var posts = _repository.GetPosts();
+    //            var posts = _repository.GetPostsWithUserDetails();
     //
     //            posts.Should().BeEmpty();
     //        }

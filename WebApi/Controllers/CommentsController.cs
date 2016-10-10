@@ -25,6 +25,9 @@ namespace WebApi.Controllers
         {
             var comment = UnitOfWork.Comments.GetPostComment(postId, commentId);
 
+            if (comment == null)
+                return NotFound();
+
             return Ok(DtoFactory.Create(comment));
         }
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebApi.Models;
+﻿using System.Collections.Generic;
 using WebApi.Models.Entities;
 
 namespace WebApi.Persistence
@@ -11,5 +6,6 @@ namespace WebApi.Persistence
     public interface IApplicationUserRepository
     {
         IEnumerable<ApplicationUser> GetUsers();
+        ApplicationUser GetUser(string id);
     }
 }

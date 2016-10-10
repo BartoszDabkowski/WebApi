@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WebApi.Models;
 using WebApi.Models.Entities;
 
 namespace WebApi.Persistence
@@ -17,6 +16,11 @@ namespace WebApi.Persistence
         public IEnumerable<ApplicationUser> GetUsers()
         {
             return _context.Users.ToList();
+        }
+
+        public ApplicationUser GetUser(string id)
+        {
+            return _context.Users.SingleOrDefault(u => u.Id == id);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using WebApi.Models.Entities;
 using WebApi.Models.JoinModels;
 
 namespace WebApi.Persistence
@@ -9,13 +10,17 @@ namespace WebApi.Persistence
         private readonly IApplicationDbContext _context;
         private readonly JoinModelFactory _joinModelFactory;
 
+        public Post GetPost(int id)
+        {
+            return _context.Posts.SingleOrDefault(p => p.Id == id);
+        }
         public PostRepostiory(IApplicationDbContext context)
         {
             _context = context;
             _joinModelFactory = new JoinModelFactory();
         }
 
-        public PostWithUserDetails GetPost(int id)
+        public PostWithUserDetails GetPostWithUserDetails(int id)
         {
             var postWithUserDetails = _context.Posts.Join(_context.Users,
                         p => p.UserId,
@@ -26,7 +31,7 @@ namespace WebApi.Persistence
             return postWithUserDetails;
         }
 
-        public IEnumerable<PostWithUserDetails> GetPosts()
+        public IEnumerable<PostWithUserDetails> GetPostsWithUserDetails()
         {
             var postWithUserDetails = _context.Posts.Join(_context.Users,
                     p => p.UserId,
@@ -59,6 +64,16 @@ namespace WebApi.Persistence
                     _joinModelFactory.CreatePostWithUserDetails());
 
             return postWithUserDetails;
+        }
+
+        public void Add(Post post)
+        {
+            _context.Posts.Add(post);
+        }
+
+        public void Remove(Post post)
+        {
+            _context.Posts.Remove(post);
         }
     }
 }
