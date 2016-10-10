@@ -1,4 +1,7 @@
-﻿using WebApi.Models;
+﻿using WebApi.Core;
+using WebApi.Core.Models;
+using WebApi.Core.Repositories;
+using WebApi.Persistence.Repositories;
 
 namespace WebApi.Persistence
 {

@@ -3,8 +3,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using WebApi.Models;
-using WebApi.Models.Entities;
+using WebApi.Core;
+using WebApi.Core.Models;
+using WebApi.Core.Models.Entities;
 
 namespace WebApi
 {

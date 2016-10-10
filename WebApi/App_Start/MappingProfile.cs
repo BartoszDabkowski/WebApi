@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
-using WebApi.Dtos;
-using WebApi.Models;
-using WebApi.Models.Entities;
-using WebApi.Models.JoinModels;
+using WebApi.Core.Dtos;
+using WebApi.Core.Models.Entities;
+using WebApi.Core.Models.JoinModels;
 
 namespace WebApi.App_Start
 {

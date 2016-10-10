@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using WebApi.Dtos;
+using WebApi.Core;
+using WebApi.Core.Dtos;
+using WebApi.Core.Repositories;
 using WebApi.Persistence;
 
 namespace WebApi.Controllers

@@ -8,8 +8,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using WebApi.Core;
+using WebApi.Core.Models;
 using WebApi.Providers;
-using WebApi.Models;
 
 namespace WebApi
 {

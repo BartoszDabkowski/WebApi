@@ -272,11 +272,27 @@
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Dtos\CommentV2Dto.cs" />
-    <Compile Include="Dtos\CommentDto.cs" />
-    <Compile Include="Dtos\DtoFactory.cs" />
-    <Compile Include="Dtos\PostDto.cs" />
-    <Compile Include="Dtos\UserDto.cs" />
+    <Compile Include="Core\Dtos\CommentDto.cs" />
+    <Compile Include="Core\Dtos\CommentV2Dto.cs" />
+    <Compile Include="Core\Dtos\DtoFactory.cs" />
+    <Compile Include="Core\Dtos\PostDto.cs" />
+    <Compile Include="Core\Dtos\UserDto.cs" />
+    <Compile Include="Core\Models\AccountBindingModels.cs" />
+    <Compile Include="Core\Models\AccountViewModels.cs" />
+    <Compile Include="Core\Models\Address.cs" />
+    <Compile Include="Core\Models\ApplicationDbContext.cs" />
+    <Compile Include="Core\Models\Entities\ApplicationUser.cs" />
+    <Compile Include="Core\Models\Entities\Comment.cs" />
+    <Compile Include="Core\Models\Entities\Post.cs" />
+    <Compile Include="Core\Models\JoinModels\CommentWithUserDetails.cs" />
+    <Compile Include="Core\Models\JoinModels\JoinModelFactory.cs" />
+    <Compile Include="Core\Models\JoinModels\PostWithUserDetails.cs" />
+    <Compile Include="Core\Repositories\IApplicationDbContext.cs" />
+    <Compile Include="Core\Repositories\IApplicationUserRepository.cs" />
+    <Compile Include="Core\Repositories\ICommentRepository.cs" />
+    <Compile Include="Core\Repositories\IPostRepository.cs" />
+    <Compile Include="Core\Repositories\IRepository.cs" />
+    <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Filter\RequireHttpsAttribute.cs" />
     <Compile Include="Filter\WebApiAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -303,21 +319,7 @@
       <DependentUpon>201610061614139_SeedUsersPostsAndComments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="Models\Entities\ApplicationUser.cs" />
-    <Compile Include="Models\Entities\Comment.cs" />
-    <Compile Include="Models\Entities\Post.cs" />
-    <Compile Include="Models\JoinModels\CommentWithUserDetails.cs" />
-    <Compile Include="Models\JoinModels\JoinModelFactory.cs" />
-    <Compile Include="Models\JoinModels\PostWithUserDetails.cs" />
     <Compile Include="Persistence\CommentRepository.cs" />
-    <Compile Include="Persistence\IApplicationDbContext.cs" />
-    <Compile Include="Persistence\ICommentRepository.cs" />
-    <Compile Include="Persistence\IPostRepository.cs" />
-    <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Persistence\PostRepostiory.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -326,8 +328,6 @@
     <Compile Include="Services\WebApiControllerSelector.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Persistence\ApplicationUserRepository.cs" />
-    <Compile Include="Persistence\IRepository.cs" />
-    <Compile Include="Persistence\IApplicationUserRepository.cs" />
     <Compile Include="Persistence\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
