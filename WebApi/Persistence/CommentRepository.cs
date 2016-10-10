@@ -9,6 +9,18 @@ namespace WebApi.Persistence
         private readonly IApplicationDbContext _context;
         private readonly JoinModelFactory _joinModelFactory;
 
+        public CommentWithUserDetails GetComment(int commentId)
+        {
+            var commentWithUserDetails = _context.Comments
+                .Join(_context.Users,
+                    c => c.UserId,
+                    u => u.Id,
+                    _joinModelFactory.CreateCommentWithUserDetails())
+                .SingleOrDefault(c => c.Id == commentId);
+
+            return commentWithUserDetails;
+        }
+
         public CommentRepository(IApplicationDbContext context)
         {
             _context = context;

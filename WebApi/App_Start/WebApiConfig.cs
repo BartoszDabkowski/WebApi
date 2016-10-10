@@ -38,6 +38,12 @@ namespace WebApi
 
             config.Routes.MapHttpRoute(
                 name: "Comments",
+                routeTemplate: "api/comments/{commentId}",
+                defaults: new { controller = "comments" }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "PostsComments",
                 routeTemplate: "api/posts/{postId}/comments",
                 defaults: new { controller = "comments"}
             );

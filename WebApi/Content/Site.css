@@ -15,3 +15,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.user {
+    color: red;
+}
+
+.post {
+    color: blue;
+}
+
+.comment {
+    color: green;
+}

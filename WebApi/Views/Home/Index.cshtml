@@ -1,40 +1,50 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <h3>Paths</h3>
-    
-    
-</div>
-<div class="row">
-    <div class="col-md-6">
+﻿<div class="row">
+    <div class="well col-md-6">
         <h2>GET</h2>
         <ul>
+            <b>Get Users</b>
             <li>
-                Get Users
                 .../api/users
                 <ul>
-                    <li>.../api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc</li>
+                    <li>.../api/users</li>
+                </ul>
+</li>
+            <b>Get Users Post(s)</b>
+            <li>
+                .../api/users/<span class="user">{userId}</span>/posts/<span class="post">{postId}</span>/
+                <ul>
+                    <li>.../api/users/<span class="user">47b28585-f6b5-492d-afe0-873c4e64e5bc</span>/posts</li>
+                    <li>.../api/users/<span class="user">47b28585-f6b5-492d-afe0-873c4e64e5bc</span>/posts/<span class="post">2</span></li>
                 </ul>
             </li>
+            <b>Get Post(s)</b>
             <li>
-                Get Users Post(s)
-                .../api/users/{userId}/posts/{postId}
+                .../api/posts/<span class="post">{postId}</span>
                 <ul>
-                    <li>/api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc/posts</li>
-                    <li>/api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc/posts/2</li>
+                    <li>.../api/posts</li>
+                    <li>.../api/posts/<span class="post">2</span></li>
                 </ul>
             </li>
+            <b>Get Posts Comments</b>
             <li>
-                Get Posts Comments
-                .../api/posts/{commentId}/comments
+                .../api/posts/<span class="post">{postId}</span>/comments
                 <ul>
-                    <li>.../api/posts/2/comments</li>
+                    <li>.../api/posts/<span class="post">2</span>/comments</li>
                 </ul>
             </li>
+            <b>Get Comments (With API Versioning)</b>
             <li>
-                Get Users Comments
-                .../api/users/{userId}/posts/{postId}/comments
+                .../api/comments/<span class="comment">{commentId}</span>
                 <ul>
-                    <li>.../api/users/47b28585-f6b5-492d-afe0-873c4e64e5bc/posts/1/comments</li>
+                    <li>.../api/comments/<span class="comment">2</span></li>
+                    <li>.../api/comments/<span class="comment">2</span>?v=2 (returns DateTime)</li>
+                </ul>
+            </li>
+            <b>Get Users Comments for Post</b>
+            <li>
+                .../api/users/<span class="user">{userId}</span>/posts/<span class="post">{postId}</span>/comments
+                <ul>
+                    <li>.../api/users/<span class="user">47b28585-f6b5-492d-afe0-873c4e64e5bc</span>/posts/<span class="post">1</span>/comments</li>
                 </ul>
             </li>
         </ul>

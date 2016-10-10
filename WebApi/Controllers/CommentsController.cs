@@ -13,6 +13,17 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
+        public IHttpActionResult GetComment(int commentId)
+        {
+            var comment = UnitOfWork.Comments.GetComment(commentId);
+
+            if (comment == null)
+                return NotFound();
+
+            return Ok(DtoFactory.Create(comment));
+        }
+
+        [HttpGet]
         public IEnumerable<CommentDto> GetComments(int postId)
         {
             var comments = UnitOfWork.Comments.GetAllPostComments(postId)
