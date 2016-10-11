@@ -7,9 +7,11 @@ namespace WebApi.Persistence.Migrations
         public override void Up()
         {
             Sql(@"
+                SET IDENTITY_INSERT [dbo].[AspNetUsers] ON
                 INSERT INTO [dbo].[AspNetUsers] ([Id], [Email], [EmailConfirmed], [PasswordHash], [SecurityStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEndDateUtc], [LockoutEnabled], [AccessFailedCount], [UserName], [Name], [Address_Street], [Address_Suite], [Address_City], [Address_Zipcode], [Website]) VALUES (N'47b28585-f6b5-492d-afe0-873c4e64e5bd', N'kate@pinkerton.com', 0, N'AD1rTkxKzzhcdZVQbhBtO7kh7DwmrlwW3IKxNQ5niyrF9Z0UJUwm4omyFJbbel5JAw==', N'ce2cc2cd-6d1c-48e3-b5a8-8c6d6b31c039', N'334-125-8787', 0, 0, NULL, 1, 0, N'kate@pinkerton.com', N'Kate Warne', N'45th St NW', N'9877', N'Seattle', N'98988', N'pinkerton.com')
                 INSERT INTO [dbo].[AspNetUsers] ([Id], [Email], [EmailConfirmed], [PasswordHash], [SecurityStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEndDateUtc], [LockoutEnabled], [AccessFailedCount], [UserName], [Name], [Address_Street], [Address_Suite], [Address_City], [Address_Zipcode], [Website]) VALUES (N'47b28585-f6b5-492d-afe0-873c4e64e5be', N'john@pinkerton.com', 0, N'AD1rTkxKzzhcdZVQbhBtO7kh7DwmrlwW3IKxNQ5niyrF9Z0UJUwm4omyFJbbel5JAw==', N'ce2cc2cd-6d1c-48e3-b5a8-8c6d6b31c039', N'425-178-1850', 0, 0, NULL, 1, 0, N'john@pinkerton.com', N'John Scobell', N'16th Ave NE', N'9888', N'New York City', N'12344', N'pinkerton.com')
-            
+                SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF
+
                 SET IDENTITY_INSERT [dbo].[Posts] ON
                 INSERT INTO [dbo].[Posts] ([Id], [UserId], [Title], [Body], [DateTime]) VALUES (2, N'47b28585-f6b5-492d-afe0-873c4e64e5bc', N'Employment Screening', N'Pinkerton is a worldwide industry leader in development and delivery of compliance-focused, employee screening solutions specifically designed to cut costs and save time.', N'2016-10-04 00:00:00')
                 INSERT INTO [dbo].[Posts] ([Id], [UserId], [Title], [Body], [DateTime]) VALUES (3, N'47b28585-f6b5-492d-afe0-873c4e64e5bc', N'Security Risk Management', N'Pinkerton offers the global resources and expertise to provide comprehensive Security Risk Management and Consulting Support for any or all of your locations around the world.', N'2015-10-05 00:00:00')

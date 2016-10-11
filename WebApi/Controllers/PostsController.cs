@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using WebApi.Core;
 using WebApi.Core.Dtos;
 using WebApi.Core.Models.Entities;
 using WebApi.Core.Repositories;

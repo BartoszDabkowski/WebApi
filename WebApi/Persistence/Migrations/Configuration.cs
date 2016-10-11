@@ -1,6 +1,5 @@
 using System.Data.Entity.Migrations;
 using WebApi.Core;
-using WebApi.Core.Models;
 
 namespace WebApi.Persistence.Migrations
 {
@@ -9,6 +8,7 @@ namespace WebApi.Persistence.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            MigrationsDirectory = @"Persistence\Migrations";
         }
 
         protected override void Seed(ApplicationDbContext context)

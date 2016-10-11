@@ -88,9 +88,7 @@ C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\System.Web.Http.Owi
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.csprojResolveAssemblyReference.cache
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.dll
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.pdb
-C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.InitialMigration.resources
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.csproj.GenerateResource.Cache
-C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.AddProportiesToApplicationUser.resources
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\AutoMapper.dll
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\AutoMapper.xml
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.dll
@@ -104,6 +102,8 @@ C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Extensions.
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Common.xml
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.Mvc.xml
 C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\bin\Ninject.Web.WebApi.xml
-C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.SeedAdminUser.resources
-C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.RecoverFromMigrationMistakesAddManyDifferentTables.resources
-C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Migrations.SeedUsers.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Persistence.Migrations.InitialMigration.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Persistence.Migrations.AddProportiesToApplicationUser.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Persistence.Migrations.SeedAdminUser.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Persistence.Migrations.RecoverFromMigrationMistakesAddManyDifferentTables.resources
+C:\Users\BartoszDabkowski\Documents\github\WebApi\WebApi\obj\Debug\WebApi.Persistence.Migrations.SeedUsers.resources
